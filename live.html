@@ -38,7 +38,7 @@
     .page {
       width: min(100%, 920px);
       margin: 0 auto;
-      padding: 8px 8px 24px;
+      padding: 12px 10px 28px;
       display: grid;
       gap: 14px;
     }
@@ -338,54 +338,6 @@
       color: var(--muted);
     }
 
-    @media (max-width: 759px) {
-      body {
-        overflow-x: hidden;
-      }
-
-      .page {
-        width: 100%;
-        max-width: none;
-        padding: 6px 6px 20px;
-        gap: 10px;
-      }
-
-      .topbar,
-      .site-footer,
-      .card-button,
-      .expanded,
-      .section-card {
-        padding-left: 12px;
-        padding-right: 12px;
-      }
-
-      .topbar,
-      .site-footer,
-      .card-button,
-      .expanded {
-        padding-top: 12px;
-        padding-bottom: 12px;
-      }
-
-      .panel,
-      .card,
-      .expanded,
-      .section-card {
-        border-radius: 18px;
-      }
-
-      .card-head {
-        grid-template-columns: 44px minmax(0, 1fr) 30px;
-        gap: 10px;
-      }
-
-      .icon-tile {
-        width: 44px;
-        height: 44px;
-        border-radius: 14px;
-      }
-    }
-
     @media (min-width: 760px) {
       .page {
         width: min(50vw, calc(100% - 28px));
@@ -527,3 +479,4 @@
   </script>
 </body>
 </html>
+
