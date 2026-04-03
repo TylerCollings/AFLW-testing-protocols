@@ -8,7 +8,8 @@
 
 ### Purpose
 
-Lower-limb power and asymmetry during jumping and landing
+Lower-limb power and asymmetry during jumping and landing.
+**Why?** Forceful athletes are exposed to greater tissue loading. CMJ is a quick & easy general test tht correlates strongly with many athletic tasks.
 
 ### Setup
 
