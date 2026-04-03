@@ -1,0 +1,479 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AFLW Testing Protocols</title>
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='18' fill='%23185b66'/%3E%3Ctext x='50' y='60' text-anchor='middle' font-size='48' font-family='Georgia' fill='white'%3EA%3C/text%3E%3C/svg%3E">
+  <script src="shared/prototype-data.js"></script>
+  <style>
+    :root {
+      --bg: #e8eef2;
+      --panel: rgba(246, 250, 252, 0.94);
+      --panel-strong: #fbfdff;
+      --line: rgba(31, 51, 64, 0.14);
+      --text: #13212b;
+      --muted: #58707f;
+      --brand: #0f766e;
+      --accent: #c96f4a;
+      --accent-soft: rgba(201, 111, 74, 0.14);
+      --brand-soft: rgba(15, 118, 110, 0.14);
+      --shadow: 0 20px 48px rgba(20, 44, 60, 0.14);
+      --radius: 24px;
+    }
+
+    * { box-sizing: border-box; }
+
+    body {
+      margin: 0;
+      min-height: 100vh;
+      font-family: "Aptos", "Segoe UI", sans-serif;
+      color: var(--text);
+      background:
+        radial-gradient(circle at top left, rgba(15, 118, 110, 0.18), transparent 28%),
+        radial-gradient(circle at bottom right, rgba(201, 111, 74, 0.18), transparent 32%),
+        linear-gradient(180deg, #f7fbfd 0%, #dde7ee 100%);
+    }
+
+    .page {
+      width: min(50vw, calc(100% - 20px));
+      margin: 0 auto;
+      padding: 14px 0 28px;
+      display: grid;
+      gap: 14px;
+    }
+
+    .panel,
+    .card,
+    .expanded {
+      background: var(--panel);
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+      backdrop-filter: blur(10px);
+    }
+
+    .topbar {
+      padding: 16px;
+      display: grid;
+      gap: 12px;
+      justify-items: center;
+    }
+
+    .title-highlight {
+      padding: 14px 18px;
+      border-radius: 20px;
+      background: linear-gradient(135deg, rgba(15, 118, 110, 0.18), rgba(15, 118, 110, 0.05));
+      border: 1px solid rgba(15, 118, 110, 0.22);
+      box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.55);
+      text-align: center;
+    }
+
+    .topbar h1 {
+      margin: 0;
+      font-family: inherit;
+      font-size: clamp(1.35rem, 3.8vw, 2.35rem);
+      line-height: 0.94;
+      letter-spacing: -0.05em;
+    }
+
+    .topbar-copy {
+      display: grid;
+      gap: 6px;
+      justify-items: center;
+      text-align: center;
+    }
+
+    .topbar-copy p {
+      margin: 0;
+      color: var(--muted);
+      line-height: 1.55;
+      font-size: 0.95rem;
+      max-width: 62ch;
+    }
+
+    .topbar-copy strong {
+      color: var(--text);
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 14px;
+    }
+
+    .site-footer {
+      padding: 16px;
+      display: grid;
+      gap: 12px;
+    }
+
+    .footer-logos {
+      display: flex;
+      flex-direction: row;
+      flex-wrap: wrap;
+      gap: 12px;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .footer-logo {
+      min-height: 74px;
+      padding: 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .footer-logo img {
+      display: block;
+      max-height: 54px;
+      max-width: 230px;
+      object-fit: contain;
+    }
+
+    .card {
+      overflow: hidden;
+      background:
+        radial-gradient(circle at top right, rgba(15, 118, 110, 0.1), transparent 34%),
+        linear-gradient(180deg, rgba(251, 253, 255, 0.98), rgba(236, 244, 248, 0.96));
+    }
+
+    .card-button {
+      width: 100%;
+      border: none;
+      background: transparent;
+      color: inherit;
+      font: inherit;
+      text-align: left;
+      cursor: pointer;
+      padding: 16px;
+      display: grid;
+      gap: 14px;
+    }
+
+    .card-head {
+      display: grid;
+      grid-template-columns: 52px minmax(0, 1fr) auto;
+      gap: 12px;
+      align-items: center;
+    }
+
+    .icon-tile {
+      width: 52px;
+      height: 52px;
+      border-radius: 18px;
+      display: flex;
+      background: var(--brand-soft);
+      border: 1px solid rgba(15, 118, 110, 0.16);
+      overflow: hidden;
+      align-items: center;
+      justify-content: center;
+      padding: 6px;
+    }
+
+    .icon-tile img {
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+    }
+
+    .card-copy strong,
+    .card-copy span {
+      display: block;
+    }
+
+    .card-copy strong {
+      font-size: 1rem;
+      line-height: 1.2;
+    }
+
+    .card-copy span {
+      margin-top: 3px;
+      color: var(--muted);
+      font-size: 0.84rem;
+    }
+
+    .toggle-mark {
+      min-width: 34px;
+      height: 34px;
+      border-radius: 999px;
+      display: grid;
+      place-items: center;
+      background: rgba(255, 255, 255, 0.85);
+      border: 1px solid var(--line);
+      font-weight: 800;
+      color: var(--brand);
+    }
+
+    .expanded {
+      border-top-left-radius: 0;
+      border-top-right-radius: 0;
+      margin-top: -8px;
+      padding: 16px;
+      border-top: none;
+      display: grid;
+      gap: 16px;
+    }
+
+    .hero-image {
+      width: 100%;
+      min-height: 230px;
+      border-radius: 22px;
+      background:
+        radial-gradient(circle at top right, rgba(201, 111, 74, 0.14), transparent 30%),
+        linear-gradient(180deg, rgba(251, 253, 255, 0.98), rgba(229, 239, 245, 0.94));
+      border: 1px solid rgba(31, 51, 64, 0.08);
+      display: grid;
+      place-items: center;
+      overflow: hidden;
+      padding: 18px;
+    }
+
+    .hero-image img {
+      width: min(100%, 280px);
+      max-width: 100%;
+      object-fit: contain;
+    }
+
+    .description {
+      color: var(--muted);
+      line-height: 1.6;
+      font-size: 0.95rem;
+    }
+
+    .section-stack {
+      display: grid;
+      gap: 12px;
+    }
+
+    .section-card {
+      padding: 18px;
+      border-radius: 22px;
+      background: var(--panel-strong);
+      border: 1px solid rgba(31, 51, 64, 0.1);
+      display: grid;
+      gap: 14px;
+      align-content: start;
+    }
+
+    .section-head {
+      display: flex;
+      justify-content: space-between;
+      gap: 10px;
+      align-items: start;
+    }
+
+    .section-head h2 {
+      margin: 0;
+      font-size: 0.86rem;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--brand);
+    }
+
+    .section-card ul,
+    .section-card ol {
+      margin: 0;
+      padding-left: 20px;
+      line-height: 1.7;
+      font-size: 0.95rem;
+    }
+
+    .section-figure {
+      margin: 0;
+      padding: 14px;
+      border-radius: 18px;
+      background: linear-gradient(180deg, rgba(244, 248, 251, 0.98), rgba(232, 240, 245, 0.95));
+      border: 1px solid rgba(31, 51, 64, 0.1);
+      display: grid;
+      place-items: center;
+    }
+
+    .section-figure img {
+      display: block;
+      width: min(100%, 360px);
+      max-width: 100%;
+      object-fit: contain;
+    }
+
+    .cue-stack {
+      display: grid;
+      gap: 10px;
+    }
+
+    .cue {
+      padding: 14px;
+      border-radius: 18px;
+      background: linear-gradient(135deg, rgba(201, 111, 74, 0.16), rgba(201, 111, 74, 0.05));
+      border: 1px solid rgba(201, 111, 74, 0.16);
+      font-weight: 700;
+      line-height: 1.45;
+    }
+
+    .video-card {
+      overflow: hidden;
+      border-radius: 18px;
+      background: #10232d;
+      color: white;
+    }
+
+    .video-card video {
+      display: block;
+      width: 100%;
+      aspect-ratio: 16 / 9;
+      background: #000;
+    }
+
+    .video-card div {
+      padding: 14px;
+      line-height: 1.5;
+    }
+
+    .empty {
+      padding: 14px;
+      border-radius: 16px;
+      background: rgba(255, 255, 255, 0.72);
+      border: 1px dashed var(--line);
+      color: var(--muted);
+    }
+
+    @media (min-width: 760px) {
+      .page {
+        width: min(50vw, calc(100% - 28px));
+        padding-top: 20px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <main class="page">
+    <section class="panel topbar">
+      <div class="title-highlight">
+        <h1>AFLW Injury Screening Protocols.</h1>
+      </div>
+      <div class="footer-logos" aria-label="Organisation logos">
+        <div class="footer-logo">
+          <img src="logos/GU_Australian Centre for Precision Health and Technology_rgb_red_horizontal.jpg" alt="Griffith University Australian Centre for Precision Health and Technology logo">
+        </div>
+        <div class="footer-logo">
+          <img src="logos/afl-logo.png" alt="AFL logo">
+        </div>
+      </div>
+      <div class="topbar-copy intro">
+        <p><strong>About:</strong> This resource provides a mobile-friendly reference for the protocols of the AFLW injury screening battery 2026</p>
+        <p><strong>Instructions:</strong> Tap a test to view more details.</p>
+      </div>
+    </section>
+
+    <section class="grid" id="grid"></section>
+
+    <footer class="panel site-footer">
+      <div class="topbar-copy footer-copy">
+        <p><strong>Document created by:</strong> Tyler Collings (<a href="mailto:t.collings@griffith.edu.au">t.collings@griffith.edu.au</a>)</p>
+        <p><strong>Funding:</strong> This work was funded by the AFL.</p>
+        <p><strong>Acknowledgements:</strong> Thank you to the AFLW staff who contributed to designing these testing protocols, to the AFL Healthcare Team, AFL Physiotherapists Association, and academic collaborators (Matthew Bourne, Joel Garrett, Brooke Paterson, and Melissa Haberfield).</p>
+      </div>
+    </footer>
+  </main>
+
+  <script>
+    const tests = [...window.AFLW_TESTS].sort((a, b) => a.title.localeCompare(b.title));
+    const grid = document.getElementById("grid");
+    const openIds = new Set();
+    const sections = ["Setup", "Protocol", "Cues", "Key Variables", "Video"];
+
+    function createSection(test, section) {
+      if (section === "Video") {
+        const content = test.videos.length
+          ? `<article class="video-card"><video controls playsinline src="videos/${test.videos[0].src}"></video><div><strong>${test.videos[0].title}</strong><br>${test.videos[0].description}</div></article>`
+          : `<div class="empty">No embedded video is attached to this test yet.</div>`;
+        return `
+          <article class="section-card">
+            <div class="section-head">
+              <h2>Video</h2>
+            </div>
+            ${content}
+          </article>
+        `;
+      }
+
+      if (section === "Cues") {
+        return `
+          <article class="section-card">
+            <div class="section-head">
+              <h2>Cues</h2>
+            </div>
+            <div class="cue-stack">${test.sections.Cues.map((cue) => `<div class="cue">${cue}</div>`).join("")}</div>
+          </article>
+        `;
+      }
+
+      const items = test.sections[section];
+      const tag = section === "Protocol" ? "ol" : "ul";
+      const setupDiagram = section === "Setup" && test.setupDiagram
+        ? `<figure class="section-figure"><img src="diagrams/${test.setupDiagram.src}" alt="${test.setupDiagram.alt}"></figure>`
+        : "";
+      return `
+        <article class="section-card">
+          <div class="section-head">
+            <h2>${section}</h2>
+          </div>
+          ${setupDiagram}
+          <${tag}>${items.map((item) => `<li>${item}</li>`).join("")}</${tag}>
+        </article>
+      `;
+    }
+
+    function createExpanded(test) {
+      return `
+        <section class="expanded">
+          <div class="hero-image">
+            <img src="vector_crop/${test.image}" alt="${test.title} illustration">
+          </div>
+          <div class="description">${test.purpose}</div>
+          <div class="section-stack">
+            ${sections.map((section) => createSection(test, section)).join("")}
+          </div>
+        </section>
+      `;
+    }
+
+    function render() {
+      grid.innerHTML = tests.map((test) => `
+        <article>
+          <section class="card">
+            <button class="card-button" type="button" data-id="${test.id}" aria-expanded="${openIds.has(test.id)}">
+              <div class="card-head">
+                <div class="icon-tile">
+                  <img src="vector_crop/${test.image}" alt="${test.title} icon">
+                </div>
+                <div class="card-copy">
+                  <strong>${test.title}</strong>
+                  <span>${test.equipment}</span>
+                </div>
+                <div class="toggle-mark">${openIds.has(test.id) ? "&minus;" : "+"}</div>
+              </div>
+            </button>
+          </section>
+          ${openIds.has(test.id) ? createExpanded(test) : ""}
+        </article>
+      `).join("");
+
+      grid.querySelectorAll(".card-button").forEach((button) => {
+        button.addEventListener("click", () => {
+          const id = button.dataset.id;
+          if (openIds.has(id)) {
+            openIds.delete(id);
+          } else {
+            openIds.add(id);
+          }
+          render();
+        });
+      });
+    }
+
+    render();
+  </script>
+</body>
+</html>
