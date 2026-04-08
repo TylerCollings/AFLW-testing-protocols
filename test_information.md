@@ -9,7 +9,8 @@
 ### Purpose
 
 Lower-limb power and asymmetry during jumping and landing.
-**Why?** Forceful athletes are exposed to greater tissue loading. CMJ is a quick & easy general test tht correlates strongly with many athletic tasks.
+
+**Why?** Forceful athletes are exposed to greater tissue loading. CMJ is a quick & easy general test of force production that correlates strongly with other athletic tasks.
 
 ### Setup
 
@@ -47,7 +48,9 @@ Lower-limb power and asymmetry during jumping and landing.
 
 ### Purpose
 
-Trunk and knee control during forceful single-leg jump-landings
+Trunk and knee control during single-leg jump-landings
+
+**Why?** Trunk lateral position is a main contributor to knee/ankle torque, and therefore, ligament loading. Knee valgus increases ACL loading. Task designed to be forceful, challenge single-leg control, continuous motion with rebound, and take attention away from movement.
 
 ### Setup
 
@@ -88,6 +91,8 @@ Trunk and knee control during forceful single-leg jump-landings
 
 Assess maximal strength of the hip adductor and abductor muscle groups
 
+**Why?** Hip muscle strength important for controlling pelvis position and femur alignment that contributes to knee/ankle ligament injury. Hip adductor muscle strains common in hip/groin pain.
+
 ### Setup
 
 - Lying supine (on back)
@@ -122,6 +127,8 @@ Assess maximal strength of the hip adductor and abductor muscle groups
 ### Purpose
 
 Assess maximal strength of the knee flexor muscle group during a Nordic hamstring exercise.
+
+**Why?** Hamstring strains commonly occur during eccentric contractions. The Nordic hamstring exercise is an easy way to tests supra-maximal strength (i.e., force above 1RM due to eccentric only phase).
 
 ### Setup
 
@@ -160,6 +167,8 @@ Assess maximal strength of the knee flexor muscle group during a Nordic hamstrin
 
 Assess maximal strength of the knee extensor muscle group
 
+**Why?** Knee extensor strength underpins acceleration, deceleration, and landing performance.
+
 ### Setup
 
 - Seated position with knee just passed edge
@@ -196,7 +205,9 @@ Assess maximal strength of the knee extensor muscle group
 
 ### Purpose
 
-Assess maximal strength of the plantarflexor muscle group (soleus-bias)
+Assess maximal strength of the plantarflexor muscle group
+
+**Why?** Seated with bent knee biases soleus, which is commonly strained.
 
 ### Setup
 
@@ -233,6 +244,8 @@ Assess maximal strength of the plantarflexor muscle group (soleus-bias)
 
 Ankle dorsiflexion range of motion in lunging position (knee-to-wall)
 
+**Why?** Dorsiflexion enables greater movement options and prevents componsentation by proximal joints.
+
 ### Setup
 
 - DyanMo strapped to side of leg
@@ -268,7 +281,9 @@ Ankle dorsiflexion range of motion in lunging position (knee-to-wall)
 
 ### Purpose
 
-Assess maximal strength of the neck muscle groups across flexion, extension, and lateral flexion (left and right)
+Assess maximal strength and rate of force development of the neck muscle groups in flexion, extension, and lateral flexion (left and right)
+
+**Why?** Neck muscle force production may improve head-neck control during collisions
 
 ### Setup
 
@@ -304,6 +319,8 @@ Assess maximal strength of the neck muscle groups across flexion, extension, and
 
 Full body anthropometric measurements
 
+**Why?** Limb lengths is a key determinant of joint torques, and therefore, ligament loading and muscle force required to produce movement.
+
 ### Setup
 
 - Stand front on to the camera
@@ -328,36 +345,40 @@ Full body anthropometric measurements
 
 ---
 
-## Unanticipated Sidestep
+## Reactive change of direction
 
 **Equipment:** OpenCap + SmartSpeed
 
 ### Purpose
 
-Movement analysis during reactive running sidesteps
+Movement analysis during reactive running change of direction (sidestep))
+
+**Why?** Reactive sidestep testing captures cutting mechanics in a more sport-specific setting. Change of direction commonly associated with knee/ankle ligament injuruies.
 
 ### Setup
 
-- First gate i
-- Athlete starts from standardised position
-- Random directional cue system prepared
+- 4 x gates
+- Gate 1 to 2 times the 5m accleration
+- Gate 2 triggers either a left or right cut
+- Direction is random
 
 ![Unanticipated sidestep setup diagram](diagrams/COD_diagram.png)
 
 ### Protocol
 
-- Accelerate toward decision point
-- Respond to random directional cue
-- Perform sidestep cut in indicated direction
-- Maintain speed through movement
-- Continue through exit gate
-- Complete 3–5 trials
+- Start behind gate 1
+- Acclerate through the first 5m as fast as possible
+- Respond to light on gate and change direction to the left or right
+- Acclerate through the left/right gate as a fast as possible
+- Complete as many trials as need to get 3 in each direction
 
 ### Key Variables
 
-- Joint kinematics
-- Movement time
-- Modelled loading metrics
+- 5m time (s)
+- Change of direction time (s)
+- Knee flexion (*°*)
+- Knee valgus (*°*)
+- Trunk lateral flexion (*°*)
 
 ### Cues
 

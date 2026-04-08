@@ -38,7 +38,7 @@
     .page {
       width: min(100%, 920px);
       margin: 0 auto;
-      padding: 12px 10px 28px;
+      padding: 8px 8px 24px;
       display: grid;
       gap: 14px;
     }
@@ -242,6 +242,15 @@
       font-size: 0.95rem;
     }
 
+    .why-line {
+      display: block;
+      margin-top: 8px;
+    }
+
+    .why-line strong {
+      color: var(--brand);
+    }
+
     .section-stack {
       display: grid;
       gap: 12px;
@@ -338,6 +347,54 @@
       color: var(--muted);
     }
 
+    @media (max-width: 759px) {
+      body {
+        overflow-x: hidden;
+      }
+
+      .page {
+        width: 100%;
+        max-width: none;
+        padding: 6px 6px 20px;
+        gap: 10px;
+      }
+
+      .topbar,
+      .site-footer,
+      .card-button,
+      .expanded,
+      .section-card {
+        padding-left: 12px;
+        padding-right: 12px;
+      }
+
+      .topbar,
+      .site-footer,
+      .card-button,
+      .expanded {
+        padding-top: 12px;
+        padding-bottom: 12px;
+      }
+
+      .panel,
+      .card,
+      .expanded,
+      .section-card {
+        border-radius: 18px;
+      }
+
+      .card-head {
+        grid-template-columns: 44px minmax(0, 1fr) 30px;
+        gap: 10px;
+      }
+
+      .icon-tile {
+        width: 44px;
+        height: 44px;
+        border-radius: 14px;
+      }
+    }
+
     @media (min-width: 760px) {
       .page {
         width: min(50vw, calc(100% - 28px));
@@ -356,14 +413,18 @@
       </div>
       <div class="footer-logos" aria-label="Organisation logos">
         <div class="footer-logo">
-          <img src="logos/GU_Australian Centre for Precision Health and Technology_rgb_red_horizontal.jpg" alt="Griffith University Australian Centre for Precision Health and Technology logo">
+          <img src="logos/GU_Australian Centre for Precision Health and Technology_rgb_red_horizontal.png" alt="Griffith University Australian Centre for Precision Health and Technology logo">
         </div>
         <div class="footer-logo">
           <img src="logos/afl-logo.png" alt="AFL logo">
         </div>
+        <div class="footer-logo">
+          <img src="logos/vald.png" alt="VALD logo">
+        </div>
       </div>
       <div class="topbar-copy intro">
         <p><strong>About:</strong> This resource provides a mobile-friendly reference for the protocols of the AFLW injury screening battery 2026</p>
+        <p><strong>Created by:</strong> Tyler Collings (<a href="mailto:t.collings@griffith.edu.au">t.collings@griffith.edu.au</a>)</p>
         <p><strong>Instructions:</strong> Tap a test to view more details.</p>
       </div>
     </section>
@@ -372,7 +433,6 @@
 
     <footer class="panel site-footer">
       <div class="topbar-copy footer-copy">
-        <p><strong>Document created by:</strong> Tyler Collings (<a href="mailto:t.collings@griffith.edu.au">t.collings@griffith.edu.au</a>)</p>
         <p><strong>Funding:</strong> This work was funded by the AFL.</p>
         <p><strong>Acknowledgements:</strong> Thank you to the AFLW staff who contributed to designing these testing protocols, to the AFL Healthcare Team, AFL Physiotherapists Association, and academic collaborators (Matthew Bourne, Joel Garrett, Brooke Paterson, and Melissa Haberfield).</p>
       </div>
@@ -433,7 +493,9 @@
           <div class="hero-image">
             <img src="vector_crop/${test.image}" alt="${test.title} illustration">
           </div>
-          <div class="description">${test.purpose}</div>
+          <div class="description">
+            ${test.purpose}${test.why ? `<span class="why-line"><strong>Why?</strong> ${test.why}</span>` : ""}
+          </div>
           <div class="section-stack">
             ${sections.map((section) => createSection(test, section)).join("")}
           </div>
@@ -479,4 +541,3 @@
   </script>
 </body>
 </html>
-
