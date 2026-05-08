@@ -49,15 +49,22 @@ window.AFLW_TESTS = [
     image: "triple_hop.png",
     purpose: "Trunk and knee control during single-leg jump-landings",
     why: "Trunk lateral position is a main contributor to knee/ankle torque, and therefore, ligament loading. Knee valgus increases ACL loading. Task designed to be forceful, challenge single-leg control, continuous motion with rebound, and take attention away from movement.",
+    setupImage: {
+      src: "humantrak_battery.png",
+      alt: "HumanTrak battery setup for single-leg triple vertical hop"
+    },
     sections: {
       "Setup": [
+        "Select \"Single-leg Countermovement Jump\" test in HumanTrak software",
+        "Follow on screen standing calibration",
         "Stand on one leg",
         "Opposite leg off the ground",
         "Hands on hips"
       ],
       "Protocol": [
         "Perform 3 consecutive maximal vertical jumps on the same leg",
-        "Minimise ground contact time between hops",
+        "Reach head towards ceiling every jump",
+        "Continuous motion with fast ground contact",
         "Stick and stabilise after the final landing",
         "Reset position with a couple of seconds rest",
         "Complete 3 trials per leg"
@@ -71,12 +78,17 @@ window.AFLW_TESTS = [
         "Contact time (ms)"
       ],
       "Cues": [
-        "Jump as high as possible",
         "Head through the roof on every jump",
-        "Quick ground contact"
+        "Fast ground contact"
       ]
     },
-    videos: []
+    videos: [
+      {
+        title: "Single-Leg Triple Vertical Hop",
+        description: "",
+        src: "Single-Leg Triple Vertical Hop.mp4"
+      }
+    ]
   },
   {
     id: "hip-add-abd",
@@ -172,7 +184,7 @@ window.AFLW_TESTS = [
         "Knee flexed to 70°",
         "Feet off the ground",
         "Holding onto sides of seat",
-        "Optional: strap around hips.",
+        "Ideally: strap around hips.",
         "Dynamometer strap around ankle",
         "Strap secured underneath/behind seat",
         "Strap approximately 90° to lower leg"
@@ -210,10 +222,11 @@ window.AFLW_TESTS = [
     why: "Seated with bent knee biases soleus, which is commonly strained.",
     sections: {
       "Setup": [
-        "Seated with knee under the pad",
+        "Seated with one knee under the pad",
+        "Foot & thigh pointing straight ahead",
         "Knee positioned over toes",
-        "Heel flat on the ground",
-        "Adjust height to stop plantarflexion",
+        "Heel as flat on the ground as possible",
+        "Place a block/plate under the foot if bar cannot be adjusted to the right height",
         "Holding onto the ForceFrame"
       ],
       "Protocol": [
@@ -231,19 +244,25 @@ window.AFLW_TESTS = [
         "PUSH! PUSH! PUSH!"
       ]
     },
-    videos: []
+    videos: [
+      {
+        title: "Isometric Seated Calf Strength",
+        description: "",
+        src: "Isometric Seated Calf Strength.mp4"
+      }
+    ]
   },
   {
     id: "knee-to-wall",
     abbrev: "KTW",
     title: "Ankle Dorsiflexion Range of Motion",
-    equipment: "DynaMo",
+    equipment: "Ruler",
     image: "knee_to_wall.png",
     purpose: "Ankle dorsiflexion range of motion in lunging position (knee-to-wall)",
     why: "Dorsiflexion enables greater movement options and prevents componsentation by proximal joints.",
     sections: {
       "Setup": [
-        "DyanMo strapped to side of leg",
+        "Ruler placed at the base of the wall (0 position)",
         "Shoe off",
         "Lunge position",
         "Test side foot placed flat on ground",
@@ -251,18 +270,17 @@ window.AFLW_TESTS = [
         "Opposite knee supporting weight"
       ],
       "Protocol": [
-        "Lunge knee forward over toes",
+        "Lunge knee forward over toes until touching the wall",
+        "If the knee touches the wall, move back 1-2cm and repeat",
+        "Find the maximum distance",
         "Keep heel flat on ground at all times",
-        "Move until maximal dorsiflexion is reached",
-        "Record angle of tibia relative to vertical",
-        "Repeat for 2–3 trials per side"
+        "Measure distance from the wall to the end of the big toe"
       ],
       "Key Variables": [
-        "Peak angle (deg)",
-        "Asymmetry (%)"
+        "Distance (cm)"
       ],
       "Cues": [
-        "Drive knee forward",
+        "Touch your knee to the wall",
         "Push heel down"
       ]
     },
@@ -276,23 +294,28 @@ window.AFLW_TESTS = [
     image: "neck_strength.png",
     purpose: "Assess maximal strength and rate of force development of the neck muscle groups in flexion, extension, and lateral flexion (left and right)",
     why: "Neck muscle force production may improve head-neck control during collisions",
+    setupImage: {
+      src: "neck_test_battery.jpg",
+      alt: "Neck strength test battery setup"
+    },
     sections: {
       "Setup": [
-        "Athlete seated or standing",
-        "Neutral head and trunk position",
-        "Device or resistance applied in test direction"
+        "Athlete seated and holding sides",
+        "Sit up tall, and align head, trunk, and hip position",
+        "Strap placed around forehead",
+        "Test flexion, extension, left lateral flexion, and right lateral flexion",
+        "Setup 4 test batteries with directions in a random order"
       ],
       "Protocol": [
-        "Test flexion, extension, left lateral flexion, and right lateral flexion",
-        "For maximal strength trials, gradually build force over ~1–2 s and hold maximal contraction for ~3–5 s",
-        "For rate of force development trials, contract as fast and hard as possible from rest and hold briefly for ~1–2 s",
-        "Maintain posture and alignment",
-        "Complete 2–3 trials per direction"
+        "Take up tension in strap",
+        "Contract as hard and fast as possible",
+        "Hold for 3-4s or until peak has been reached",
+        "Maintain posture and trunk position",
+        "Complete 3 trials of each"
       ],
       "Key Variables": [
         "Peak force (N)",
-        "Rate of force development (N/s)",
-        "Directional asymmetry"
+        "Rate of force development (N/s)"
       ],
       "Cues": [
         "Push hard and fast"
@@ -301,38 +324,39 @@ window.AFLW_TESTS = [
     videos: []
   },
   {
-    id: "body-scan",
-    abbrev: "3DS",
-    title: "3D Body Scan",
+    id: "posture-assessment",
+    abbrev: "PA",
+    title: "Posture Assessment",
     equipment: "HumanTrak",
-    image: "body_scan.png",
+    image: "posture_assessment.png",
     purpose: "Full body anthropometric measurements",
     why: "Limb lengths is a key determinant of joint torques, and therefore, ligament loading and muscle force required to produce movement.",
     sections: {
       "Setup": [
-        "Stand front on to the camera",
-        "Standing up straight",
-        "Arms slightly away from body (A pose)"
+        "Standing relaxed",
+        "Square-on to the camera"
       ],
       "Protocol": [
         "Stand still",
-        "Complete single capture"
+        "Capture a front image",
+        "Turn to the right (left side to camers)",
+        "Capture side image"
       ],
       "Key Variables": [
         "Height",
         "Segment lengths",
-        "Body dimensions"
+        "Shoulder/hip drop"
       ],
       "Cues": [
-        "Stand tall & relaxed",
-        "Arms out to the side"
+        "Stand relaxed",
+        "Arms by your side"
       ]
     },
     videos: [
       {
-        title: "3D Body Scan",
+        title: "Posture Assessment",
         description: "Reference clip for HumanTrak scan setup and posture.",
-        src: "3D Body Scan.mp4"
+        src: "Posture Assessment.mp4"
       }
     ]
   },
@@ -343,7 +367,7 @@ window.AFLW_TESTS = [
     equipment: "OpenCap + SmartSpeed",
     image: "sidestep.png",
     purpose: "Movement analysis during reactive running change of direction (sidestep))",
-    why: "Reactive sidestep testing captures cutting mechanics in a more sport-specific setting. Change of direction commonly associated with knee/ankle ligament injuruies.",
+    why: "Reactive sidestep testing captures cutting mechanics in a sport-specific movement. Change of direction commonly associated with knee/ankle ligament injuruies.",
     setupDiagram: {
       src: "COD_diagram.png",
       alt: "Unanticipated sidestep setup diagram showing the approach lane, timing gates, and left-right sidestep options."

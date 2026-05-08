@@ -54,6 +54,8 @@ Trunk and knee control during single-leg jump-landings
 
 ### Setup
 
+- Select "Single-leg Countermovement Jump" test in HumanTrak software
+- Follow on screen standing calibration
 - Stand on one leg
 - Opposite leg off the ground
 - Hands on hips
@@ -61,7 +63,8 @@ Trunk and knee control during single-leg jump-landings
 ### Protocol
 
 - Perform 3 consecutive maximal vertical jumps on the same leg
-- Minimise ground contact time between hops
+- Reach head towards ceiling every jump
+- Continuous motion with fast ground contact
 - Stick and stabilise after the final landing
 - Reset position with a couple of seconds rest
 - Complete 3 trials per leg
@@ -77,9 +80,8 @@ Trunk and knee control during single-leg jump-landings
 
 ### Cues
 
-- “Jump as high as possible”
 - “Head through the roof on every jump”
-- "Quick ground contact"
+- "Fast ground contact"
 
 ---
 
@@ -175,7 +177,7 @@ Assess maximal strength of the knee extensor muscle group
 - Knee flexed to 70°
 - Feet off the ground
 - Holding onto sides of seat
-- *Optional*: strap around hips.
+- *Ideally*: strap around hips.
 - Dynamometer strap around ankle
 - Strap secured underneath/behind seat
 - Strap approximately 90° to lower leg
@@ -211,10 +213,11 @@ Assess maximal strength of the plantarflexor muscle group
 
 ### Setup
 
-- Seated with knee under the pad
+- Seated with one knee under the pad
+- Foot & thigh pointing straight ahead
 - Knee positioned over toes
-- Heel flat on the ground
-- Adjust height to stop plantarflexion
+- Heel as flat on the ground as possible
+- Place a block/plate under the foot if bar cannot be adjusted to the right height
 - Holding onto the ForceFrame
 
 ### Protocol
@@ -238,7 +241,7 @@ Assess maximal strength of the plantarflexor muscle group
 
 ## Ankle Dorsiflexion Range of Motion
 
-**Equipment:** DynaMo
+**Equipment:** Ruler
 
 ### Purpose
 
@@ -248,7 +251,7 @@ Ankle dorsiflexion range of motion in lunging position (knee-to-wall)
 
 ### Setup
 
-- DyanMo strapped to side of leg
+- Ruler placed at the base of the wall (0 position)
 - Shoe off
 - Lunge position
 - Test side foot placed flat on ground
@@ -257,20 +260,19 @@ Ankle dorsiflexion range of motion in lunging position (knee-to-wall)
 
 ### Protocol
 
-- Lunge knee forward over toes
+- Lunge knee forward over toes until touching the wall
+- If the knee touches the wall, move back 1-2cm and repeat
+- Find the maximum distance
 - Keep heel flat on ground at all times
-- Move until maximal dorsiflexion is reached
-- Record angle of tibia relative to vertical
-- Repeat for 2–3 trials per side
+- Measure distance from the wall to the end of the big toe
 
 ### Key Variables
 
-- Peak angle (deg)
-- Asymmetry (%)
+- Distance (cm)
 
 ### Cues
 
-- "Drive knee forward"
+- "Touch your knee to the wall"
 - “Push heel down”
 
 ---
@@ -287,23 +289,23 @@ Assess maximal strength and rate of force development of the neck muscle groups 
 
 ### Setup
 
-- Athlete seated or standing
-- Neutral head and trunk position
-- Device or resistance applied in test direction
+- Athlete seated and holding sides
+- Sit up tall, and align head, trunk, and hip position
+- Strap placed around forehead
+- Test flexion, extension, left lateral flexion, and right lateral flexion 
+- Setup 4 test batteries with directions in a random order
 
 ### Protocol
-
-- Test flexion, extension, left lateral flexion, and right lateral flexion
-- For maximal strength trials, gradually build force over ~1–2 s and hold maximal contraction for ~3–5 s
-- For rate of force development trials, contract as fast and hard as possible from rest and hold briefly for ~1–2 s
-- Maintain posture and alignment
-- Complete 2–3 trials per direction
+- Take up tension in strap
+- Contract as hard and fast as possible
+- Hold for 3-4s or until peak has been reached
+- Maintain posture and trunk position
+- Complete 3 trials of each
 
 ### Key Variables
 
 - Peak force (N)
 - Rate of force development (N/s)
-- Directional asymmetry
 
 ### Cues
 
@@ -311,7 +313,7 @@ Assess maximal strength and rate of force development of the neck muscle groups 
 
 ---
 
-## 3D Body Scan
+## Posture Assessment
 
 **Equipment:** HumanTrak
 
@@ -323,25 +325,27 @@ Full body anthropometric measurements
 
 ### Setup
 
-- Stand front on to the camera
-- Standing up straight
-- Arms slightly away from body (A pose)
+- Standing relaxed
+- Square-on to the camera
+
 
 ### Protocol
 
 - Stand still
-- Complete single capture
+- Capture a front image
+- Turn to the right (left side to camers)
+- Capture side image
 
 ### Key Variables
 
 - Height
 - Segment lengths
-- Body dimensions
+- Shoulder/hip drop
 
 ### Cues
 
-- “Stand tall & relaxed”
-- "Arms out to the side"
+- “Stand relaxed”
+- "Arms by your side"
 
 ---
 
@@ -353,7 +357,7 @@ Full body anthropometric measurements
 
 Movement analysis during reactive running change of direction (sidestep))
 
-**Why?** Reactive sidestep testing captures cutting mechanics in a more sport-specific setting. Change of direction commonly associated with knee/ankle ligament injuruies.
+**Why?** Reactive sidestep testing captures cutting mechanics in a sport-specific movement. Change of direction commonly associated with knee/ankle ligament injuruies.
 
 ### Setup
 

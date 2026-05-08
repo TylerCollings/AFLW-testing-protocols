@@ -433,7 +433,7 @@
 
     <footer class="panel site-footer">
       <div class="topbar-copy footer-copy">
-        <p><strong>Funding:</strong> This work was funded by the AFL.</p>
+        <p><strong>Funding:</strong> This work was funded by the AFL and VALD.</p>
         <p><strong>Acknowledgements:</strong> Thank you to the AFLW staff who contributed to designing these testing protocols, to the AFL Healthcare Team, AFL Physiotherapists Association, and academic collaborators (Matthew Bourne, Joel Garrett, Brooke Paterson, and Melissa Haberfield).</p>
       </div>
     </footer>
@@ -476,13 +476,17 @@
       const setupDiagram = section === "Setup" && test.setupDiagram
         ? `<figure class="section-figure"><img src="diagrams/${test.setupDiagram.src}" alt="${test.setupDiagram.alt}"></figure>`
         : "";
+      const setupImage = section === "Setup" && test.setupImage
+        ? `<figure class="section-figure"><img src="images/${test.setupImage.src}" alt="${test.setupImage.alt}"></figure>`
+        : "";
       return `
         <article class="section-card">
           <div class="section-head">
             <h2>${section}</h2>
           </div>
-          ${setupDiagram}
           <${tag}>${items.map((item) => `<li>${item}</li>`).join("")}</${tag}>
+          ${setupDiagram}
+          ${setupImage}
         </article>
       `;
     }

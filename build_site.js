@@ -9,6 +9,7 @@ const INDEX_PATH = path.join(ROOT, 'index.html');
 const BUILD_DIR = path.join(ROOT, 'build');
 const BUILD_INDEX_PATH = path.join(BUILD_DIR, 'index.html');
 const IMAGE_DIR = path.join(ROOT, 'vector_crop');
+const SETUP_IMAGE_DIR = path.join(ROOT, 'images');
 const VIDEO_DIR = path.join(ROOT, 'videos');
 const DIAGRAM_DIR = path.join(ROOT, 'diagrams');
 const LOGO_DIR = path.join(ROOT, 'logos');
@@ -30,6 +31,10 @@ function validateAssets(tests) {
 
     if (test.setupDiagram && !fs.existsSync(path.join(DIAGRAM_DIR, test.setupDiagram.src))) {
       missing.push(`Missing diagram for "${test.title}": diagrams/${test.setupDiagram.src}`);
+    }
+
+    if (test.setupImage && !fs.existsSync(path.join(SETUP_IMAGE_DIR, test.setupImage.src))) {
+      missing.push(`Missing setup image for "${test.title}": images/${test.setupImage.src}`);
     }
   }
 
@@ -59,6 +64,7 @@ function writeBuildIndex() {
 
 function copyBuildAssets() {
   copyDirectory(IMAGE_DIR, path.join(BUILD_DIR, 'vector_crop'));
+  copyDirectory(SETUP_IMAGE_DIR, path.join(BUILD_DIR, 'images'));
   copyDirectory(VIDEO_DIR, path.join(BUILD_DIR, 'videos'));
   copyDirectory(DIAGRAM_DIR, path.join(BUILD_DIR, 'diagrams'));
   copyDirectory(LOGO_DIR, path.join(BUILD_DIR, 'logos'));

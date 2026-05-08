@@ -2,7 +2,7 @@
 /**
  * Reads test_information.md and syncs shared/prototype-data.js.
  *
- * Preserved fields : id, abbrev, image, videos, setupDiagram
+ * Preserved fields : id, abbrev, image, videos, setupDiagram, setupImage
  * Updated fields   : title, equipment, purpose, why, sections (Setup / Protocol / Key Variables / Cues)
  *
  * Usage: node update-data.js
@@ -182,6 +182,7 @@ function merge(existing, parsed) {
       purpose: match.purpose || test.purpose,
       why: match.why,
       ...(test.setupDiagram ? { setupDiagram: test.setupDiagram } : {}),
+      ...(test.setupImage ? { setupImage: test.setupImage } : {}),
       sections: {
         Setup: match.setup.length ? match.setup : test.sections.Setup,
         Protocol: match.protocol.length ? match.protocol : test.sections.Protocol,
@@ -230,6 +231,13 @@ function serialise(tests) {
       lines.push('    setupDiagram: {');
       lines.push(`      src: ${JSON.stringify(test.setupDiagram.src)},`);
       lines.push(`      alt: ${JSON.stringify(test.setupDiagram.alt)}`);
+      lines.push('    },');
+    }
+
+    if (test.setupImage) {
+      lines.push('    setupImage: {');
+      lines.push(`      src: ${JSON.stringify(test.setupImage.src)},`);
+      lines.push(`      alt: ${JSON.stringify(test.setupImage.alt)}`);
       lines.push('    },');
     }
 
