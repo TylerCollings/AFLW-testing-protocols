@@ -47,9 +47,25 @@ function ensureDir(dirPath) {
   fs.mkdirSync(dirPath, { recursive: true });
 }
 
+function resetDir(dirPath) {
+  fs.rmSync(dirPath, { recursive: true, force: true });
+  ensureDir(dirPath);
+}
+
 function copyDirectory(sourceDir, targetDir) {
   ensureDir(targetDir);
   fs.cpSync(sourceDir, targetDir, { recursive: true });
+}
+
+function copySetupImages(tests) {
+  const targetDir = path.join(BUILD_DIR, 'images');
+  resetDir(targetDir);
+
+  const imageNames = new Set(tests.map((test) => test.setupImage?.src).filter(Boolean));
+
+  for (const imageName of imageNames) {
+    fs.copyFileSync(path.join(SETUP_IMAGE_DIR, imageName), path.join(targetDir, imageName));
+  }
 }
 
 function writeBuildIndex() {
@@ -62,9 +78,9 @@ function writeBuildIndex() {
   console.log(`Wrote ${path.relative(ROOT, BUILD_INDEX_PATH)} from ${path.basename(INDEX_PATH)}.`);
 }
 
-function copyBuildAssets() {
+function copyBuildAssets(tests) {
   copyDirectory(IMAGE_DIR, path.join(BUILD_DIR, 'vector_crop'));
-  copyDirectory(SETUP_IMAGE_DIR, path.join(BUILD_DIR, 'images'));
+  copySetupImages(tests);
   copyDirectory(VIDEO_DIR, path.join(BUILD_DIR, 'videos'));
   copyDirectory(DIAGRAM_DIR, path.join(BUILD_DIR, 'diagrams'));
   copyDirectory(LOGO_DIR, path.join(BUILD_DIR, 'logos'));
@@ -77,7 +93,7 @@ function main() {
   const { tests } = buildPrototypeData();
   validateAssets(tests);
   writeBuildIndex();
-  copyBuildAssets();
+  copyBuildAssets(tests);
   console.log('Build complete.');
 }
 
