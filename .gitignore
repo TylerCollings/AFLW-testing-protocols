@@ -1,2 +1,5 @@
-/images/
+/images/*
+!/images/
+!/images/humantrak_battery.png
+!/images/neck_test_battery.jpg
 /vector/
